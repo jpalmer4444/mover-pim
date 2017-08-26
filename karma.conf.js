@@ -31,3 +31,24 @@ module.exports = function (config) {
     singleRun: false
   });
 };
+
+/*
+ * src/app/app.component.scss
+  create src/app/app.component.html
+  create src/app/app.component.spec.ts
+  create src/app/app.component.ts
+  create src/app/app.module.ts
+
+  create src/assets/.gitkeep
+  create src/environments/environment.prod.ts
+  create src/environments/environment.ts
+  create src/favicon.ico
+  create src/index.html
+  create src/main.ts
+  create src/polyfills.ts
+  create src/styles.scss
+  create src/test.ts
+  create src/tsconfig.app.json
+  create src/tsconfig.spec.json
+  create src/typings.d.ts
+ */

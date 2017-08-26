@@ -3,12 +3,31 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="itemmaster">
-            <file>file:/u/local/jasonpalmer/mover-pim/e2e/app.e2e-spec.ts</file>
             <file>file:/u/local/jasonpalmer/mover-pim/src/main.ts</file>
-            <file>file:/u/local/jasonpalmer/mover-pim/tsconfig.json</file>
-            <file>file:/u/local/jasonpalmer/mover-pim/protractor.conf.js</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/app.module.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/_services/user.service.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/login/login.component.spec.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/_model/driver.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/app.component.html</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/karma.conf.js</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/_services/configuration.service.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/_model/mover.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/_model/moving-job.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/_model/review.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/e2e/app.po.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/_model/availability.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/_model/user.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/_services/user.service.spec.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/environments/environment.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/index.html</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/app.component.spec.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/e2e/app.e2e-spec.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/_services/configuration.service.spec.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/_model/group.ts</file>
             <file>file:/u/local/jasonpalmer/mover-pim/package.json</file>
-            <file>file:/u/local/jasonpalmer/mover-pim/tslint.json</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/e2e/tsconfig.e2e.json</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/app.component.ts</file>
+            <file>file:/u/local/jasonpalmer/mover-pim/src/app/login/login.component.html</file>
         </group>
     </open-files>
 </project-private>
