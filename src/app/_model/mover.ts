@@ -1,8 +1,10 @@
-import { Group } from './group';
-import { User } from './user';
 
-export interface Mover extends User {
+export interface Mover {
 
+    firstName: string;
+    lastName: string;
+    username: string;
+    memberSince: Date;
     years: number;
     months: number;
 

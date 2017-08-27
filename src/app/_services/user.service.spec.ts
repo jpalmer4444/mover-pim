@@ -10,7 +10,6 @@ const mockMover = {
     firstName: 'John',
     lastName: 'Doe',
     username: 'jdoe',
-    password: 'passwordHash',
     memberSince: new Date(),
     years: -1,
     months: -1
@@ -44,7 +43,6 @@ describe('UserService', () => {
                 expect(mover.firstName).toEqual(mockMover.firstName);
                 expect(mover.lastName).toEqual(mockMover.lastName);
                 expect(mover.username).toEqual(mockMover.username);
-                expect(mover.password).toEqual(mockMover.password);
                 expect(mover.years).toEqual(mockMover.years);
                 expect(mover.months).toEqual(mockMover.months);
             });
@@ -63,7 +61,6 @@ describe('UserService', () => {
                 expect(mover.firstName).toEqual(mockMover.firstName);
                 expect(mover.lastName).toEqual(mockMover.lastName);
                 expect(mover.username).toEqual(mockMover.username);
-                expect(mover.password).toEqual(mockMover.password);
                 expect(mover.years).toEqual(mockMover.years);
                 expect(mover.months).toEqual(mockMover.months);
             });

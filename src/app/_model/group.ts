@@ -4,6 +4,6 @@ export interface Group {
     name: string;
     city: string;
     state: string;
-    moverIds: Array<String>
+    moverIds: Array<string>
     
 }

@@ -1,9 +1,8 @@
-import { Mover } from './mover';
 
 export interface Availability {
     
     id: string;
-    mover: Mover;
+    moverId: string;
     start: Date;
     end: Date;
     

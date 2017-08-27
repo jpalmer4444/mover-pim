@@ -1,4 +1,3 @@
-import { Mover } from './mover';
 
 export interface MovingJob {
     
@@ -7,7 +6,7 @@ export interface MovingJob {
     squareFeet: number;
     start: Date;
     end: Date;
-    driver: Mover,
-    movers: Array<Mover>
+    driverId: string,
+    moverIds: Array<string>
     
 }
