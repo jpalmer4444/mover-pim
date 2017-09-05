@@ -9,5 +9,9 @@ export class ConfigurationService {
   getServiceUrl(): string {
         return environment.serviceurl;
      }
+     
+  getServerErrorMessage(): string {
+        return environment.servererror;
+     }
 
 }

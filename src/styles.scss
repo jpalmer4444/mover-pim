@@ -1,3 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.css";
+
+/* bs-callout and bs-callout-info used to display nice blue div */
+.bs-callout-info {
+    background-color: #f4f8fa;
+    border-color: #bce8f1;
+}
+.bs-callout {
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 3px solid #eee;
+    border-left-color: rgb(238, 238, 238);
+}
+
+.bs-prime{
+    color: #0077b3;
+}

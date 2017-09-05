@@ -1,0 +1,32 @@
+
+.rating-info {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #fff;
+    border-width: 1px;
+    border-color: #ddd;
+    border-style: solid;
+    padding-top: 2px;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: none;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.rating-info::before {
+    content: "Rating";
+    font-size: 12px;
+    font-weight: bold;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+
+.app-rating {
+    .alert{
+        padding: 2px;
+    }
+}
+

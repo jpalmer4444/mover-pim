@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  serviceurl: 'localhost:8090'
+  serviceurl: 'http://localhost:8090',
+  servererror: 'Server Error!'
 };

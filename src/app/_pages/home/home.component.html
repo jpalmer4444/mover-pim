@@ -1,0 +1,59 @@
+<div class="col-md-10 col-md-offset-1">
+    <div class="page-header">
+        <h1>Home Page <small class='pull-right'><i>Moving Services</i></small></h1>
+    </div>
+    <h3>Hello, {{currentMover.firstName}}</h3>
+    <div class="bs-callout bs-callout-info">
+        <h4 [innerHtml]="currentMover.firstName"></h4>
+        <p>
+            View all your important activities here. You can see your groups here, as well as all the movers 
+            that are members of those groups and the cumulative ratings of each. And of course, you can checkout 
+            your cumulative rating so you know what Drivers and Group Leaders see when scheduling labor for a job.
+        </p>
+    </div>
+    
+    <app-rating 
+        [borderStyle]="'solid'"
+        [width]="ratingWidth"
+        [username]="currentMover.username" 
+        [rating]="getRatingForMover(currentMover.username)">
+    </app-rating>
+    
+    <ul class="list-group" style="list-style: none;">
+        <li class="list-group-item" *ngFor="let gmr of groupMoversRatings">
+            <div><h3>{{gmr.group.name}}<small class="pull-right">{{ gmr.group.city + ', ' + gmr.group.state }}</small></h3></div>
+            <ul class="list-group" style="list-style: none;">
+                <li class="list-group-item" *ngFor="let mover of gmr.movers">
+                    <app-rating class='pull-right'
+                        [styleClass]="'none'" 
+                        [height]="50" 
+                        [borderStyle]="'none'"
+                        [width]="ratingWidth"
+                        [username]="mover.username" 
+                        [rating]="getRatingForMover(mover.username)">
+                    </app-rating>
+
+                    <span class="glyphicon glyphicon-home"></span>
+                    &nbsp;
+                    <span style='font-weight: bold;font-size: 1.2em;'>
+                        {{mover.username}} ({{mover.firstName}} {{mover.lastName}})
+                    </span> 
+                </li>
+            </ul>
+        </li>
+    </ul>
+<p>
+    <a [routerLink]="['/login']">Logout</a>
+</p>
+
+</div>
+
+<!--
+
+    Home Page
+
+    Welcome, ${mover.username}
+
+    Rating: ${}
+
+-->

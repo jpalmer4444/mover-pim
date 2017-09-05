@@ -1,28 +1,41 @@
-import {TestBed, inject} from '@angular/core/testing';
-import {HttpModule, XHRBackend, Response, ResponseOptions} from '@angular/http';
-import {Mover} from './../_model/mover';
-import {MockBackend} from '@angular/http/testing';
-import {ConfigurationService} from './configuration.service';
+import { TestBed, inject } from '@angular/core/testing';
+import { HttpModule, XHRBackend, Response, ResponseOptions } from '@angular/http';
+import { MockBackend } from '@angular/http/testing';
 
-import {UserService} from './user.service';
+import { ConfigurationService } from './configuration.service';
+import { Mover } from './../_model/mover';
+import { UserService } from './user.service';
+import { HeaderService } from './header.service';
+import { LocalService } from './local.service';
 
-const mockMover = {
-    firstName: 'John',
-    lastName: 'Doe',
-    username: 'jdoe',
-    memberSince: new Date(),
-    years: -1,
-    months: -1
-};
+import {
+    MyMockUserService,
+    MyMockHeaderService,
+    MyMockLocalService,
+    MyMockConfigurationService,
+    _MOVER
+} from '../_mocks/mocks';
+
+const mockMover = _MOVER;
 
 describe('UserService', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [HttpModule],
-            providers: [UserService, ConfigurationService,
+            imports: [ HttpModule ],
+            providers: [
+                {
+                    provide: ConfigurationService, useClass: MyMockConfigurationService
+                },
+                {
+                    provide: HeaderService, useClass: MyMockHeaderService
+                },
+                {
+                    provide: UserService, useClass: MyMockUserService
+                },
                 {
                     provide: XHRBackend, useClass: MockBackend
-                }
+                },
+                {provide: LocalService, useClass: MyMockLocalService}
             ]
         });
     });

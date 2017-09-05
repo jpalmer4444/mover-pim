@@ -1,0 +1,10 @@
+<div>
+
+    <h1>Register Page</h1>
+
+
+    <h3 *ngIf="!currentMover.roles">Register Form</h3>
+    <h3 *ngIf="currentMover.roles">No Recent Jobs</h3>
+    <div *ngIf="currentMover.roles">Come on pal - you are already registered. What gives?</div>
+    
+</div>

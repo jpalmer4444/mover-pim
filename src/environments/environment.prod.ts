@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  serviceurl: 'drivermovergroups.com'
+  serviceurl: 'localhost:8090',
+  servererror: 'Server Error!'
 };

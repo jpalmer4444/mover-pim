@@ -1,5 +1,5 @@
 
-export interface Availability {
+export class Availability {
     
     id: string;
     moverId: string;

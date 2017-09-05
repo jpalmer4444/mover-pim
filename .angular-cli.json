@@ -22,8 +22,9 @@
         "styles.scss"
       ],
       "scripts": [
-            "../node_modules/bootstrap/dist/js/bootstrap.js"
-            ],
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -39,15 +40,24 @@
   "lint": [
     {
       "project": "src/tsconfig.app.json",
-      "exclude": "**/node_modules/**"
+      "exclude": [
+  "**/node_modules/**",
+  "**/src/app/mocks/**"
+]
     },
     {
       "project": "src/tsconfig.spec.json",
-      "exclude": "**/node_modules/**"
+      "exclude": [
+  "**/node_modules/**",
+  "**/src/app/mocks/**"
+]
     },
     {
       "project": "e2e/tsconfig.e2e.json",
-      "exclude": "**/node_modules/**"
+      "exclude": [
+  "**/node_modules/**",
+  "**/src/app/mocks/**"
+]
     }
   ],
   "test": {
@@ -57,6 +67,7 @@
   },
   "defaults": {
     "styleExt": "scss",
-    "component": {}
+    "component": {
+    }
   }
 }
