@@ -12,10 +12,8 @@ import { AlertService } from '../../_services/alert.service';
 import { HeaderService } from '../../_services/header.service';
 import { AuthenticatedService } from '../../_services/authenticated.service';
 import {
-    MyMockUserService,
-    MyMockAlertService,
-    MyMockHeaderService,
-    MyMockStorageService,
+    MyMockUserService, MyMockAlertService, 
+    MyMockHeaderService, MyMockStorageService, 
     MyMockConfigurationService
 } from '../../_mocks/mocks';
 

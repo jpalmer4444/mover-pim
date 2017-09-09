@@ -15,6 +15,7 @@ import { AlertService } from '../_services/alert.service';
 export class AuthenticatedService {
 
     private subject = new Subject<Mover>();
+    private currentMover: Mover = null;
 
     constructor(
         private router: Router,
@@ -26,18 +27,25 @@ export class AuthenticatedService {
         router.events.subscribe(event => {
             if (event instanceof NavigationEnd) {
                 let curMover = this.localService.getCurrentMover();
-                this.subject.next(curMover);
+                this.currentMover = curMover;
+                this.subject.next(this.currentMover);
             }
         });
+        this.currentMover = this.localService.getCurrentMover();
     }
 
     getMover(): Observable<Mover> {
         return this.subject.asObservable();
     }
+    
+    getLoggedInMover(): Mover {
+        return this.currentMover;
+    }
 
     logout() {
-        this.localStorageService.remove("currentMover");
-        this.subject.next();
+        this.localStorageService.clearAll();
+        this.currentMover = null;
+        this.subject.next(this.currentMover);
     }
 
     private navTo(context: string) {
@@ -50,7 +58,8 @@ export class AuthenticatedService {
 
     loginLocal(mover: any, returnUrl?: string) {
         this.setMoverLocal(mover);
-        this.subject.next(mover);
+        this.currentMover = mover;
+        this.subject.next(this.currentMover);
         this.navTo(returnUrl);
     }
 

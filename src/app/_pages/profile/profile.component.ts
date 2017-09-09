@@ -1,24 +1,29 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import {Component, OnInit, OnDestroy, Injectable} from '@angular/core';
+import {Subscription} from 'rxjs/Subscription';
 
-import { LocalService } from './../../_services/local.service';
-import { Mover } from './../../_model/mover';
+import {AuthenticatedService} from './../../_services/authenticated.service';
+import {Mover} from './../../_model/mover';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+    selector: 'app-profile',
+    templateUrl: './profile.component.html',
+    styleUrls: ['./profile.component.scss']
 })
 
 @Injectable()
-export class ProfileComponent implements OnInit {
-    
+export class ProfileComponent implements OnInit, OnDestroy {
+
     currentMover: Mover;
 
-  constructor(private localService: LocalService) { }
+    constructor(private authenticatedService: AuthenticatedService) {}
 
-  ngOnInit() {
-      
-      this.currentMover = this.localService.getCurrentMover();
-  }
+    ngOnInit() {
+        
+        this.currentMover = this.authenticatedService.getLoggedInMover();
+
+    }
+
+    ngOnDestroy() {
+    }
 
 }

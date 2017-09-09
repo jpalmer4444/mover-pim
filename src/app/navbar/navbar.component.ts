@@ -1,5 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, OnDestroy, Injectable } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { Mover } from '../_model/mover';
@@ -13,7 +12,7 @@ import { AuthenticatedService } from '../_services/authenticated.service';
 })
 
 @Injectable()
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
     
     subscription: Subscription;
     navbarOpenLink1 = false;

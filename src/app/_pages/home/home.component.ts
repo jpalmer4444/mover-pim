@@ -6,9 +6,15 @@ import {Rating} from '../../_model/rating';
 import {GroupMoverRating} from '../../_model/group-mover-rating';
 import {GroupService} from '../../_services/group.service';
 
+import { fadeInAnimation } from '../../_animations/fade-in.animation';
+
 @Component({
     moduleId: module.id,
-    templateUrl: 'home.component.html'
+    templateUrl: 'home.component.html',
+    // make fade in animation available to this component
+    animations: [fadeInAnimation],
+    // attach the fade in animation to the host (root) element of this component
+    host: { '[@fadeInAnimation]': '' }
 })
 
 @Injectable()
@@ -33,11 +39,6 @@ export class HomeComponent implements OnInit {
         this.loadGroupMoversRatings(( ) => {
             this.currentMoverRating = +this.getRatingForMover(this.currentMover.username);
         });
-    }
-    
-    doSomething($event: Event){
-        
-        console.log('Changed' + $event.target);
     }
 
     getRatingForMover(username: string): string {

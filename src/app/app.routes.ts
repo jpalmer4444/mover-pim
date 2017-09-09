@@ -14,7 +14,8 @@ import { RegisterComponent } from './_pages/register/register.component';
 import { RecentJobsComponent } from './_pages/recent-jobs/recent-jobs.component';
 
 // guards
-import { AuthGuard } from './_guard/auth.guard';
+import { MoverGuard } from './_guard/mover.guard';
+import { DriverGuard } from './_guard/driver.guard';
 
 
 export const ROUTES: Routes = [
@@ -22,7 +23,7 @@ export const ROUTES: Routes = [
     // Home page
     // Driver can rate and/or schedule movers and see recent jobs.
     // Mover can set availability and see recent jobs.
-    { path: '', component: HomeComponent, canActivate: [ AuthGuard ] },
+    { path: '', component: HomeComponent, canActivate: [ MoverGuard ] },
     
     // Login Page
     // Driver, Mover Admin can all login
@@ -45,38 +46,38 @@ export const ROUTES: Routes = [
     // Recent Jobs Page
     // Driver can
     // Mover can
-    { path: 'recentjobs', component: RecentJobsComponent, canActivate: [ AuthGuard ] },
+    { path: 'recentjobs', component: RecentJobsComponent, canActivate: [ MoverGuard ] },
     
     // Admin Page
     // Driver cannot see
     // Mover cannot see
     // Admin can
-    { path: 'admin', component: AdminComponent, canActivate: [ AuthGuard ] },
+    { path: 'admin', component: AdminComponent, canActivate: [ MoverGuard ] },
     
     // GroupSearch Page
     // Driver can
     // Mover can
-    { path: 'groupsearch', component: GroupSearchComponent, canActivate: [ AuthGuard ] },
+    { path: 'groupsearch', component: GroupSearchComponent, canActivate: [ MoverGuard ] },
     
     // JobSearch Page
     // Driver can
     // Mover can
-    { path: 'jobsearch', component: JobSearchComponent, canActivate: [ AuthGuard ] },
+    { path: 'jobsearch', component: JobSearchComponent, canActivate: [ MoverGuard ] },
     
     // Group Page
     // Driver can
     // Mover can
-    { path: 'group', component: GroupComponent, canActivate: [ AuthGuard ] },
+    { path: 'group', component: GroupComponent, canActivate: [ MoverGuard ] },
     
     // Job Page
     // Driver can
     // Mover can
-    { path: 'job', component: JobComponent, canActivate: [ AuthGuard ] },
+    { path: 'job', component: JobComponent, canActivate: [ MoverGuard ] },
     
     // Profile Page
     // Driver can
     // Mover can
-    { path: 'profile', component: ProfileComponent, canActivate: [ AuthGuard ] },
+    { path: 'profile', component: ProfileComponent, canActivate: [ MoverGuard ] },
     
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

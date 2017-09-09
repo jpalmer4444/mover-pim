@@ -3,7 +3,7 @@
     <h1>Profile Page</h1>
 
 
-    <h3 >Personal Info for (<span ng-bind="currentUser.firstName + ' ' + currentUser.lastName"></span>)</h3>
+    <h3 >Personal Info for (<span *ngIf="currentMover" [innerHtml]="currentMover.firstName + ' ' + currentMover.lastName"></span>)</h3>
     
     
 </div>

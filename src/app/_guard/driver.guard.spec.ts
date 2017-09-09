@@ -7,20 +7,20 @@ import { HttpModule } from '@angular/http';
 
 import { LocalStorageService } from 'angular-2-local-storage';
 
-import { AuthGuard } from './auth.guard';
+import { DriverGuard } from './driver.guard';
 
 import { MyMockStorageService } from '../_mocks/mocks';
 
 describe('AuthGuard', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [ AuthGuard, { provide: LocalStorageService, useClass: MyMockStorageService } ],
+      providers: [ DriverGuard, { provide: LocalStorageService, useClass: MyMockStorageService } ],
       imports: [ HttpModule, ReactiveFormsModule, FormsModule, RouterTestingModule ]
     })
     .compileComponents();
   }));
 
-  it('should ...', inject([ AuthGuard ], (guard: AuthGuard) => {
+  it('should ...', inject([ DriverGuard ], (guard: DriverGuard) => {
     expect(guard).toBeTruthy();
   }));
 });

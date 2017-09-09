@@ -11,37 +11,59 @@
             your cumulative rating so you know what Drivers and Group Leaders see when scheduling labor for a job.
         </p>
     </div>
-    
+
+    <app-inline-edit>
+
+    </app-inline-edit>
+
+    <div>
+        <app-inline-edit [(ngModel)]="currentMover.firstName" label="Name" [required]="true" type="text">
+        </app-inline-edit>
+    </div>
+
     <app-rating 
         [borderStyle]="'solid'"
         [width]="ratingWidth"
         [username]="currentMover.username" 
         [rating]="getRatingForMover(currentMover.username)">
     </app-rating>
-    
+
     <ul class="list-group" style="list-style: none;">
         <li class="list-group-item" *ngFor="let gmr of groupMoversRatings">
-            <div><h3>{{gmr.group.name}}<small class="pull-right">{{ gmr.group.city + ', ' + gmr.group.state }}</small></h3></div>
-            <ul class="list-group" style="list-style: none;">
-                <li class="list-group-item" *ngFor="let mover of gmr.movers">
-                    <app-rating class='pull-right'
-                        [styleClass]="'none'" 
-                        [height]="50" 
-                        [borderStyle]="'none'"
-                        [width]="ratingWidth"
-                        [username]="mover.username" 
-                        [rating]="getRatingForMover(mover.username)">
-                    </app-rating>
+            <div><h3>{{gmr.group.name}}<small class="pull-right">{{ gmr.group.city + ', ' + gmr.group.state}}</small></h3></div>
 
-                    <span class="glyphicon glyphicon-home"></span>
-                    &nbsp;
-                    <span style='font-weight: bold;font-size: 1.2em;'>
+
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td>
+                            Name
+                        </td>
+                        <td>
+                            Rating
+                        </td>
+                    </tr>
+                </thead>
+                <tr *ngFor="let mover of gmr.movers">
+                    <td>
                         {{mover.username}} ({{mover.firstName}} {{mover.lastName}})
-                    </span> 
-                </li>
-            </ul>
-        </li>
-    </ul>
+                    </td>
+                    <td>
+                        <app-rating class='pull-right'
+                            [styleClass]="'none'" 
+                            [height]="50" 
+                            [borderStyle]="'none'"
+                            [width]="ratingWidth"
+                            [username]="mover.username" 
+                            [rating]="getRatingForMover(mover.username)">
+                        </app-rating>
+                    </td>
+                </tr>
+            </table>
+
+</li>
+</ul>
 <p>
     <a [routerLink]="['/login']">Logout</a>
 </p>

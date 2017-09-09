@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterTestingModule} from '@angular/router/testing';
@@ -6,7 +6,6 @@ import {ConfigurationService} from '../../_services/configuration.service';
 import {HttpModule, XHRBackend} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 import {UserService} from '../../_services/user.service';
-import {AuthenticatedService} from '../../_services/authenticated.service';
 import {AlertService} from '../../_services/alert.service';
 import {NavbarService} from '../../_services/navbar.service';
 import {LocalService} from '../../_services/local.service';
@@ -20,17 +19,17 @@ import {
     MyMockUserService
 } from '../../_mocks/mocks';
 
-import { ProfileComponent } from './profile.component';
+import { ScheduleComponent } from './schedule.component';
 
-describe('ProfileComponent', () => {
-  let component: ProfileComponent;
-  let fixture: ComponentFixture<ProfileComponent>;
+describe('ScheduleComponent', () => {
+  let component: ScheduleComponent;
+  let fixture: ComponentFixture<ScheduleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileComponent ],
+      declarations: [ ScheduleComponent ],
       imports: [HttpModule, ReactiveFormsModule, FormsModule, RouterTestingModule],
-            providers: [ AuthenticatedService,
+            providers: [
                 {
                     provide: UserService, useClass: MyMockUserService
                 },
@@ -53,12 +52,12 @@ describe('ProfileComponent', () => {
                     provide: LocalStorageService, useClass: MyMockStorageService
                 }
             ]
-        })
-            .compileComponents();
-    }));
+    })
+    .compileComponents();
+  }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProfileComponent);
+    fixture = TestBed.createComponent(ScheduleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

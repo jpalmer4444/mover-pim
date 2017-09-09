@@ -20,7 +20,8 @@ import { ReviewService } from './_services/review.service';
 import { MovingJobService } from './_services/moving-job.service';
 
 //Guards
-import { AuthGuard } from './_guard/auth.guard';
+import { MoverGuard } from './_guard/mover.guard';
+import { DriverGuard } from './_guard/driver.guard';
 
 //Components
 import { AppComponent } from './app.component';
@@ -42,6 +43,7 @@ import { InlineEditComponent } from './_directives/inline-edit-component/inline-
 
 //Routes
 import { ROUTES } from './app.routes';
+import { ScheduleComponent } from './_pages/schedule/schedule.component';
 
 // This export function is needed to avoid static analysis failures during testing
 // after running ng lint 1 time:
@@ -69,7 +71,8 @@ export function myFactory(backend: XHRBackend, defaultOptions: RequestOptions) {
         AdminComponent,
         RegisterComponent,
         RatingComponent,
-        InlineEditComponent
+        InlineEditComponent,
+        ScheduleComponent
     ],
     imports: [
         BrowserModule,
@@ -89,7 +92,8 @@ export function myFactory(backend: XHRBackend, defaultOptions: RequestOptions) {
         AlertService,
         HeaderService,
         LocalService,
-        AuthGuard,
+        MoverGuard,
+        DriverGuard,
         NavbarService,
         GroupService, 
         AuthenticatedService,

@@ -66,7 +66,7 @@ export class InlineEditComponent implements ControlValueAccessor, OnInit {
     this.editing = true;
     // Focus on the input element just as the editing begins
     setTimeout(
-        _ => this._renderer.selectRootElement(this.inlineEditControl)
+        _ => this._renderer.selectRootElement(this.inlineEditControl.nativeElement.focus())
         );
   }
 
